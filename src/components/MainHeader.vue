@@ -1,15 +1,17 @@
-<!-- <template>
+<template>
   <a-layout>
     <a-layout-header>
       <a-menu mode="horizontal" theme="dark" :default-selected-keys="['home']">
         <a-menu-item key="home">
           <a-link to="/">Hem</a-link>
         </a-menu-item>
-        <a-input placeholder="Sök..." style="margin-right: 10px" v-model="searchValue" />
-        <a-button type="primary">Sök</a-button>
         <a-menu-item key="contact">
           <a-link to="/contact">Kontakt</a-link>
         </a-menu-item>
+        <div>
+          <a-input placeholder="Sök..." style="margin-right: 10px" v-model="searchValue" />
+        </div>
+        <a-button type="primary">Sök</a-button>
       </a-menu>
     </a-layout-header>
   </a-layout>
@@ -37,34 +39,6 @@ export default {
   data() {
     return {
       searchValue: "test",
-    };
-  },
-};
-</script> -->
-
-<template>
-  <a-layout>
-    <a-layout-header>
-      <a-menu mode="horizontal" theme="dark" :default-selected-keys="['home']">
-        <a-menu-item key="home">
-          <a-link to="/">Hem</a-link>
-        </a-menu-item>
-        <a-input placeholder="Sök..." style="margin-right: 20px" v-model="searchValue" />
-        <a-button type="primary">Sök</a-button>
-        <a-menu-item key="contact">
-          <a-link to="/contact">Kontakt</a-link>
-        </a-menu-item>
-      </a-menu>
-    </a-layout-header>
-  </a-layout>
-</template>
-
-<script>
-export default {
-  name: "MainHeader",
-  data() {
-    return {
-      searchValue: "",
     };
   },
 };

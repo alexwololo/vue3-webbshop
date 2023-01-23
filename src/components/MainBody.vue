@@ -1,86 +1,29 @@
 <template>
-  <!-- <a-row>
-    <a-col
-      :span="24"
-      :xs="{ span: 24 }"
-      :sm="{ span: 12 }"
-      :md="{ span: 8 }"
-      :lg="{ span: 6 }"
-      :xl="{ span: 4 }"
-      >Kategori 1</a-col
-    >
-    <a-col
-      :span="24"
-      :xs="{ span: 24 }"
-      :sm="{ span: 12 }"
-      :md="{ span: 8 }"
-      :lg="{ span: 6 }"
-      :xl="{ span: 4 }"
-      >Kategori 2</a-col
-    >
-    <a-col
-      :span="24"
-      :xs="{ span: 24 }"
-      :sm="{ span: 12 }"
-      :md="{ span: 8 }"
-      :lg="{ span: 6 }"
-      :xl="{ span: 4 }"
-      >Kategori 3</a-col
-    >
-    <a-col
-      :span="24"
-      :xs="{ span: 24 }"
-      :sm="{ span: 12 }"
-      :md="{ span: 8 }"
-      :lg="{ span: 6 }"
-      :xl="{ span: 4 }"
-      >Kategori 4</a-col
-    >
-    <a-col
-      :span="24"
-      :xs="{ span: 24 }"
-      :sm="{ span: 12 }"
-      :md="{ span: 8 }"
-      :lg="{ span: 6 }"
-      :xl="{ span: 4 }"
-      >Kategori 5</a-col
-    >
-    <a-col
-      :span="24"
-      :xs="{ span: 24 }"
-      :sm="{ span: 12 }"
-      :md="{ span: 8 }"
-      :lg="{ span: 6 }"
-      :xl="{ span: 4 }"
-      >Kategori 6</a-col
-    >
-  </a-row> -->
-
   <div>
-    <a-row gutter="{16}">
-      <a-col :span="6" v-for="product in products" :key="product.id">
-        <a-card>
-          <template v-slot:default>
-            <div><img :src="product.thumbnail" alt="product-image" style="width: 100%" /></div>
-            <p>{{ product.title }}</p>
-            <p>{{ product.price }}</p>
-            <p>{{ product.rating }}</p>
-          </template>
-        </a-card>
-      </a-col>
-    </a-row>
+    <header>
+      <!-- header content -->
+    </header>
+    <nav>
+      <!-- navigation content -->
+    </nav>
+    <main>
+      <a-row gutter="{16}" type="flex" justify="center">
+        <a-col :span="6" v-for="product in products" :key="product.id">
+          <a-card class="card">
+            <img :src="product.thumbnail" alt="product-image" class="card-image" />
+            <div class="card-content">
+              <h2>{{ product.title }}</h2>
+              <p>{{ product.price }}</p>
+              <p>{{ product.rating }}</p>
+            </div>
+          </a-card>
+        </a-col>
+      </a-row>
+    </main>
+    <footer>
+      <!-- footer content -->
+    </footer>
   </div>
-  <!-- <div>
-    <a-row gutter="{16}">
-      <a-col :span="6" v-for="product in products" :key="product.id">
-        <a-card :title="product.title" :description="product.description">
-          <template v-slot:actions>
-            <p>{{ product.price }}</p>
-          </template>
-        </a-card>
-      </a-col>
-    </a-row>
-  </div> -->
 </template>
 
 <script>
@@ -97,7 +40,7 @@ export default {
     axios
       .get("https://dummyjson.com/products")
       .then((response) => {
-        const randomProducts = response.data.products.sort(() => 0.5 - Math.random()).slice(0, 8);
+        const randomProducts = response.data.products.sort(() => 0.5 - Math.random()).slice(0, 10);
         this.products = randomProducts;
       })
       .catch((error) => {
@@ -108,8 +51,27 @@ export default {
 </script>
 
 <style scoped>
-main {
-  padding: 20px;
+.card {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  margin: 5rem 10rem;
+}
+
+.card-image {
+  width: 50%;
+}
+
+.card-content {
   text-align: center;
+  padding: 16px;
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 80%;
+  }
 }
 </style>
