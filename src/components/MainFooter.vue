@@ -39,10 +39,9 @@ export default {
 .body {
   padding: 20px 0;
 }
-
 .footer {
   background-color: #0055a4;
-  color: #fff;
+  color: rgb(38, 38, 38);
   padding: 10px 0;
   text-align: center;
 }

@@ -57,7 +57,7 @@ export default {
   flex-direction: column;
   align-items: center;
   padding: 1rem;
-  margin: 5rem 10rem;
+  margin: 2rem 1rem;
 }
 
 .card-image {
@@ -66,7 +66,6 @@ export default {
 
 .card-content {
   text-align: center;
-  padding: 16px;
 }
 
 @media (max-width: 768px) {

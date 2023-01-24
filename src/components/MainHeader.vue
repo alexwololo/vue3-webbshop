@@ -2,16 +2,17 @@
   <a-layout>
     <a-layout-header>
       <a-menu mode="horizontal" theme="dark" :default-selected-keys="['home']">
-        <a-menu-item key="home">
-          <a-link to="/">Hem</a-link>
+        <a-menu-item key="home"
+          ><router-link to="/" active-class="active-menu-item">Home</router-link>
         </a-menu-item>
         <a-menu-item key="contact">
-          <a-link to="/contact">Kontakt</a-link>
+          <router-link :to="{ name: 'about' }">About</router-link>
         </a-menu-item>
-        <div>
-          <a-input placeholder="Sök..." style="margin-right: 10px" v-model="searchValue" />
-        </div>
-        <a-button type="primary">Sök</a-button>
+        <a-menu-item>
+          <div>
+            <a-input placeholder="Sök..." /> <a-button type="secondary">Sök</a-button>
+          </div></a-menu-item
+        >
       </a-menu>
     </a-layout-header>
   </a-layout>
@@ -31,10 +32,23 @@
 .header-menu a {
   color: #fff;
 }
+.active-menu-item {
+  background-color: #0055a4;
+}
+.router-link-exact-active {
+  color: #42b983;
+  background: crimson;
+}
 </style>
 
 <script>
+import { RouterLink } from "vue-router";
+
 export default {
+  components: {
+    RouterLink,
+  },
+
   name: "MainHeader",
   data() {
     return {
