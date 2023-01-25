@@ -31,3 +31,4 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ## other
 
 - router uses web history NOT hashes
+- test
