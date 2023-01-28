@@ -35,6 +35,7 @@ Du kan också använda ikonerna som komponenter i en <template> block.
 <template>
   <a-icon type="smile" />
 </template>
-Ant Design har ett stort utbud av ikoner, så se till att kolla deras dokumentation för att hitta den ikon du behöver.
+Ant Design har ett stort utbud av ikoner, så se till att kolla deras dokumentation för att hitta den ikon du behöver..
 
 https://codesandbox.io/s/k7qer1?file=/src/Demo.vue:572-643
+https://antdv.com/components/dropdown
