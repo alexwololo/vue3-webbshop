@@ -14,7 +14,7 @@
       <div class="flex-container">
         <img class="flex-item" :src="product.thumbnail" alt="bild" />
         <h3 class="flex-item">{{ product.title }}</h3>
-        <p class="flex-item">{{ product.price }} sek</p>
+        <p class="flex-item">{{ product.price }}kr</p>
       </div>
     </div>
   </a-carousel>
@@ -26,16 +26,14 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin: 0 4rem;
-  max-height: 100px;
-  max-width: 100px;
+  margin: 0;
 }
 
 .flex-item {
   flex: 1;
   align-self: center;
-  padding: 1rem;
-  margin: 0 2rem;
+  /* padding: 1rem;
+  margin: 0 2rem; */
   color: black;
   padding: 0;
   border: 0;
@@ -45,9 +43,11 @@
   color: rgb(255, 255, 255);
 }
 
-.flex-item img {
-  width: 100px;
-  height: 100px;
+img {
+  width: 200px;
+  height: 150px;
+  max-width: 300px;
+  max-height: 300px;
 }
 </style>
 

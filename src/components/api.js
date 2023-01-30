@@ -9,4 +9,12 @@ export default {
       console.error(error);
     }
   },
+  async getLaptops() {
+    try {
+      const { data } = await axios.get("https://dummyjson.com/products/category/laptops");
+      return data.products;
+    } catch (error) {
+      console.error(error);
+    }
+  },
 };

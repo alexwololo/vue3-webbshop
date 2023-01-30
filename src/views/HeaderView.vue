@@ -5,8 +5,10 @@
 
       <a-menu theme="dark" mode="horizontal" :style="{ lineHeight: '64px' }">
         <a-menu-item :style="{ background: '#001529' }">
-          <img alt="Vue logo" src="../assets/logo.png" class="small-logo"
-        /></a-menu-item>
+          <img alt="Vue logo" src="../assets/logo.png" class="small-logo" /><router-link
+            to="/"
+          ></router-link>
+        </a-menu-item>
         <a-menu-item class="testU" :style="{ color: 'grey', background: '#001529' }" key="100"
           ><CheckOutlined /> Fri frakt</a-menu-item
         >
