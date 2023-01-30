@@ -1,33 +1,19 @@
 <template>
-  <div :style="{ color: 'red', backgroundColor: 'aqua' }">hellooo</div>
   <a-layout>
     <a-layout-header class="header">
       <div class="logo" />
 
       <a-menu theme="dark" mode="horizontal" :style="{ lineHeight: '64px' }">
-        <a-menu-item
-          ><img alt="Vue logo" src="../assets/logo.png" class="small-logo"
+        <a-menu-item :style="{ background: '#001529' }">
+          <img alt="Vue logo" src="../assets/logo.png" class="small-logo"
         /></a-menu-item>
-        <a-menu-item class="testU" :style="{ color: 'grey' }" key="100"
+        <a-menu-item class="testU" :style="{ color: 'grey', background: '#001529' }" key="100"
           ><CheckOutlined /> Fri frakt</a-menu-item
         >
-        <a-menu-item :style="{ color: 'grey' }" key="101"
+        <a-menu-item :style="{ color: 'grey', background: '#001529' }" key="101"
           ><CheckOutlined /> 30 dagars öppet köp</a-menu-item
         >
-        <!-- <a-menu-item></a-menu-item>
-        <a-menu-item></a-menu-item>
-        <a-menu-item></a-menu-item>
-        <a-menu-item></a-menu-item>
-        <a-menu-item></a-menu-item>
-        <a-menu-item></a-menu-item>
-        <a-menu-item></a-menu-item>
-        <a-menu-item></a-menu-item>
-        <a-menu-item></a-menu-item>
-        <a-menu-item></a-menu-item>
-        <a-menu-item></a-menu-item>
-        <a-menu-item></a-menu-item>
-        <a-menu-item></a-menu-item>
-        <a-menu-item></a-menu-item> -->
+
         <a-menu-item :style="{ color: 'white' }" key="1"><UserOutlined /> Min sida</a-menu-item>
         <a-menu-item :style="{ color: 'white' }" key="2"
           ><ShoppingCartOutlined /> Kundvagn
@@ -53,6 +39,9 @@ export default {
 .testU .a-menu-item {
   color: red;
   background-color: aqua;
+}
+.testU:hover {
+  pointer-events: none;
 }
 .small-logo {
   max-width: 40px;
