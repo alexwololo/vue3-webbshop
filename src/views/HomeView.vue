@@ -6,7 +6,7 @@
           v-model:selectedKeys="selectedKeys2"
           v-model:openKeys="openKeys"
           mode="inline"
-          :style="{ height: '80%', borderRight: 0 }"
+          :style="{ minHeight: '80px', borderRight: 0 }"
         >
           <a-sub-menu key="sub1">
             <template #title>
@@ -53,65 +53,10 @@
           <a-breadcrumb-item>App</a-breadcrumb-item>
         </a-breadcrumb> -->
         <a-layout-content
-          :style="{ background: '#fff', padding: '24px', margin: 0, minHeight: '1200px' }"
+          :style="{ background: '#fff', padding: '24px', margin: 0, minHeight: '200px' }"
         >
           <a-divider orientation="left"><h2>Kampanjer</h2></a-divider>
-          <div>
-            <a-carousel arrows>
-              <template #prevArrow>
-                <div class="custom-slick-arrow" style="left: 10px; z-index: 1">
-                  <left-circle-outlined />
-                </div>
-              </template>
-              <template #nextArrow>
-                <div class="custom-slick-arrow" style="right: 10px">
-                  <right-circle-outlined />
-                </div>
-              </template>
-              <div><h3>1</h3></div>
-              <div><h3>2</h3></div>
-              <div><h3>3</h3></div>
-              <div><h3>4</h3></div>
-            </a-carousel>
-          </div>
-          <a-divider orientation="left"><h2>Nya produkter</h2></a-divider>
-          <div>
-            <a-carousel arrows>
-              <template #prevArrow>
-                <div class="custom-slick-arrow" style="left: 10px; z-index: 1">
-                  <left-circle-outlined />
-                </div>
-              </template>
-              <template #nextArrow>
-                <div class="custom-slick-arrow" style="right: 10px">
-                  <right-circle-outlined />
-                </div>
-              </template>
-              <div><h3>1</h3></div>
-              <div><h3>2</h3></div>
-              <div><h3>3</h3></div>
-              <div><h3>4</h3></div>
-            </a-carousel>
-          </div>
-          <a-divider orientation="left"><h2>Topplista</h2></a-divider>
-          <div>
-            <a-carousel arrows>
-              <template #prevArrow>
-                <div class="custom-slick-arrow" style="left: 10px; z-index: 1">
-                  <left-circle-outlined />
-                </div>
-              </template>
-              <template #nextArrow>
-                <div class="custom-slick-arrow" style="right: 10px">
-                  <right-circle-outlined />
-                </div>
-              </template>
-              <div><h3>1</h3></div>
-              <div><h3>2</h3></div>
-              <div><h3>3</h3></div>
-              <div><h3>4</h3></div>
-            </a-carousel>
-          </div>
+          <CarouselView />
         </a-layout-content>
       </a-layout>
     </a-layout>
@@ -119,6 +64,7 @@
 </template>
 
 <script>
+import CarouselView from "../components/CarouselComp.vue";
 import { LeftCircleOutlined, RightCircleOutlined } from "@ant-design/icons-vue";
 
 import { UserOutlined, LaptopOutlined, NotificationOutlined } from "@ant-design/icons-vue";
@@ -126,6 +72,7 @@ import { defineComponent, ref } from "vue";
 export default defineComponent({
   name: "HomeView",
   components: {
+    CarouselView,
     UserOutlined,
     LaptopOutlined,
     NotificationOutlined,
@@ -144,6 +91,12 @@ export default defineComponent({
 </script>
 
 <style scoped>
+.layout-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 #components-layout-demo-top-side-2 .logo {
   float: left;
   width: 120px;
@@ -187,5 +140,9 @@ export default defineComponent({
 
 .ant-carousel :deep(.slick-slide h3) {
   color: #fff;
+}
+a-sub-menu {
+  max-height: 20px; /* Justerar höjden här */
+  overflow: hidden;
 }
 </style>
