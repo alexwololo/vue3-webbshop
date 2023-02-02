@@ -1,75 +1,81 @@
-<a-divider orientation="left"><h2>Kampanjer</h2></a-divider>
-          <div>
-            <a-carousel arrows>
-              <template #prevArrow>
-                <div class="custom-slick-arrow" style="left: 10px; z-index: 1">
-                  <left-circle-outlined />
-                </div>
-              </template>
-              <template #nextArrow>
-                <div class="custom-slick-arrow" style="right: 10px">
-                  <right-circle-outlined />
-                </div>
-              </template>
-              <div
-                class="carousel-container"
-                style="display: flex; justify-content: center; align-items: center"
-              >
-                <a-card hoverable style="width: 240px">
-                  <template #cover>
-                    <img
-                      alt="example"
-                      src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-                    />
-                  </template>
-                  <a-card-meta title="Europe Street beat">
-                    <template #description>www.instagram.com</template>
-                  </a-card-meta>
-                </a-card>
-              </div>
-              <div><h3>1</h3></div>
-              <div><h3>2</h3></div>
-              <div><h3>3</h3></div>
-              <div><h3>4</h3></div>
-            </a-carousel>
-          </div>
-          <p></p>
+<template>
+  <a-layout>
+    <a-layout-header class="header">
+      <div class="logo" />
+      <a-menu
+        v-model:selectedKeys="selectedKeys1"
+        theme="dark"
+        mode="horizontal"
+        :style="{ lineHeight: '64px' }"
+      >
+        <a-menu-item key="1">nav 1</a-menu-item>
+      </a-menu>
+    </a-layout-header>
+    <a-layout>
+      <a-layout-sider width="200" style="background: #fff">
+        <a-menu
+          v-model:selectedKeys="selectedKeys2"
+          v-model:openKeys="openKeys"
+          mode="inline"
+          :style="{ height: '100%', borderRight: 0 }"
+        >
+          <a-sub-menu key="sub1">
+            <template #title>
+              <span>
+                <user-outlined />
+                subnav 1
+              </span>
+            </template>
+            <a-menu-item key="1">option1</a-menu-item>
+          </a-sub-menu>
+          <a-sub-menu key="sub2">
+            <template #title>
+              <span>
+                <laptop-outlined />
+                subnav 2
+              </span>
+            </template>
+            <a-menu-item key="5">option5</a-menu-item>
+          </a-sub-menu>
+        </a-menu>
+      </a-layout-sider>
+    </a-layout>
+  </a-layout>
+</template>
+<script>
+import { UserOutlined, LaptopOutlined, NotificationOutlined } from "@ant-design/icons-vue";
+import { defineComponent, ref } from "vue";
+export default defineComponent({
+  components: {
+    UserOutlined,
+    LaptopOutlined,
+    NotificationOutlined,
+  },
+  setup() {
+    return {
+      selectedKeys1: ref(["2"]),
+      selectedKeys2: ref(["1"]),
+      collapsed: ref(false),
+      openKeys: ref(["sub1"]),
+    };
+  },
+});
+</script>
+<style>
+#components-layout-demo-top-side-2 .logo {
+  float: left;
+  width: 120px;
+  height: 31px;
+  margin: 16px 24px 16px 0;
+  background: rgba(255, 255, 255, 0.3);
+}
 
-          <a-divider orientation="left"><h2>Nya produkter</h2></a-divider>
-          <div>
-            <a-carousel arrows>
-              <template #prevArrow>
-                <div class="custom-slick-arrow" style="left: 10px; z-index: 1">
-                  <left-circle-outlined />
-                </div>
-              </template>
-              <template #nextArrow>
-                <div class="custom-slick-arrow" style="right: 10px">
-                  <right-circle-outlined />
-                </div>
-              </template>
-              <div><h3>1</h3></div>
-              <div><h3>2</h3></div>
-              <div><h3>3</h3></div>
-              <div><h3>4</h3></div>
-            </a-carousel>
-          </div>
-          <a-divider orientation="left"><h2>Topplista</h2></a-divider>
-          <div>
-            <a-carousel arrows>
-              <template #prevArrow>
-                <div class="custom-slick-arrow" style="left: 10px; z-index: 1">
-                  <left-circle-outlined />
-                </div>
-              </template>
-              <template #nextArrow>
-                <div class="custom-slick-arrow" style="right: 10px">
-                  <right-circle-outlined />
-                </div>
-              </template>
-              <div><h3>1</h3></div>
-              <div><h3>2</h3></div>
-              <div><h3>3</h3></div>
-              <div><h3>4</h3></div>
-            </a-carousel>
-          </div>
+.ant-row-rtl #components-layout-demo-top-side-2 .logo {
+  float: right;
+  margin: 16px 0 16px 24px;
+}
+
+.site-layout-background {
+  background: #fff;
+}
+</style>

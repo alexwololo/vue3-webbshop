@@ -22,14 +22,9 @@
             <template #title>
               <span>
                 <laptop-outlined />
-                Mode
-                <router-link to="/about">About</router-link>
+                <p>mode</p>
               </span>
             </template>
-            <a-menu-item key="5">option5</a-menu-item>
-            <a-menu-item key="6">option6</a-menu-item>
-            <a-menu-item key="7">option7</a-menu-item>
-            <a-menu-item key="8">option8</a-menu-item>
           </a-sub-menu>
         </a-menu>
       </a-layout-sider>

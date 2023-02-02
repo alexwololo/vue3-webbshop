@@ -1,19 +1,11 @@
 <template>
-  <a-layout>
-    <a-header>
-      <a-menu theme="dark" mode="horizontal" :default-selected-keys="['1']">
-        <a-menu-item key="1">
-          <router-link to="/">Home</router-link>
-        </a-menu-item>
-        <a-menu-item key="2">
-          <router-link to="/about">About</router-link>
-        </a-menu-item>
-      </a-menu>
-    </a-header>
-    <a-content>
-      <router-view />
-    </a-content>
-  </a-layout>
+  <span>
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam, dolor? Harum corrupti
+      nemo delectus omnis fugit optio magnam. Voluptates fugiat quod laboriosam laborum ipsum odit
+      dolor nisi doloribus vitae quaerat.
+    </p>
+  </span>
 </template>
 
 <script>

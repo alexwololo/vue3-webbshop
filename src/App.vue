@@ -1,23 +1,17 @@
 <template>
-  <app-oldheader />
   <app-header />
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
   <router-view />
   <app-footer />
+  <span><router-link to="/">Home</router-link> | <router-link to="/about">About</router-link></span>
 </template>
 
 <script>
 import Header from "./views/HeaderView.vue";
-import OldHeader from "./views/OldHeaderView.vue";
 import Footer from "./views/FooterView.vue";
 
 export default {
   components: {
     "app-header": Header,
-    "app-oldheader": OldHeader,
     "app-footer": Footer,
   },
 };
