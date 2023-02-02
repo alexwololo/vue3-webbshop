@@ -32,22 +32,27 @@
 .flex-item {
   flex: 1;
   align-self: center;
-  /* padding: 1rem;
-  margin: 0 2rem; */
   color: black;
   padding: 0;
   border: 0;
-  margin-bottom: 2rem;
   align-items: center;
   font-size: 24px;
   color: rgb(255, 255, 255);
+  margin: 0;
+}
+
+.flex-item:first-child {
+  /* flex: 2; */
+  margin-left: 2rem;
 }
 
 img {
-  width: 200px;
+  border-radius: 20px;
   height: 150px;
-  max-width: 300px;
-  max-height: 300px;
+  height: 150px;
+  /* max-width: 150px;
+  max-height: 150px; */
+  object-fit: cover;
 }
 </style>
 
