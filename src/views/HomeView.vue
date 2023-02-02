@@ -33,18 +33,16 @@
           :style="{ background: '#fff', padding: '24px', margin: 0, minHeight: '200px' }"
         >
           <a-divider orientation="left"><h2>Kampanjer</h2></a-divider>
-          <CarouselView />
+          <CarouselComp />
+          <br />
+          <CardComp category="laptops" />
+          <br />
+          <CardComp category="smartphones" />
 
-          br
-
-          <a-card hoverable style="width: 240px">
-            <template #cover>
-              <img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />
-            </template>
-            <a-card-meta title="Europe Street beat">
-              <template #description>www.instagram.com</template>
-            </a-card-meta>
-          </a-card>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi ad magnam repellendus
+            vero saepe. Tenetur esse nobis dolore quisquam odio.
+          </p>
         </a-layout-content>
       </a-layout>
     </a-layout>
@@ -52,7 +50,8 @@
 </template>
 
 <script>
-import CarouselView from "../components/CarouselComp.vue";
+import CarouselComp from "../components/CarouselComp.vue";
+import CardComp from "../components/CardComp.vue";
 import { LeftCircleOutlined, RightCircleOutlined } from "@ant-design/icons-vue";
 
 import { UserOutlined, LaptopOutlined, NotificationOutlined } from "@ant-design/icons-vue";
@@ -60,7 +59,8 @@ import { defineComponent, ref } from "vue";
 export default defineComponent({
   name: "HomeView",
   components: {
-    CarouselView,
+    CarouselComp,
+    CardComp,
     UserOutlined,
     LaptopOutlined,
     NotificationOutlined,
