@@ -11,18 +11,18 @@
           <a-sub-menu key="sub1">
             <template #title>
               <span>
-                <user-outlined />
+                <laptop-outlined />
                 Teknik
               </span>
             </template>
-            <a-menu-item key="3"><router-link to="/">Laptop</router-link></a-menu-item>
+            <a-menu-item key="1"><router-link to="/">Laptop</router-link></a-menu-item>
             <a-menu-item key="2">Mobiler</a-menu-item>
           </a-sub-menu>
           <a-sub-menu key="sub2">
             <template #title>
               <span>
-                <laptop-outlined />
-                <p>Mode</p>
+                <user-outlined />
+                Mode
               </span>
             </template>
           </a-sub-menu>
@@ -32,17 +32,34 @@
         <a-layout-content
           :style="{ background: '#fff', padding: '24px', margin: 0, minHeight: '200px' }"
         >
-          <a-divider orientation="left"><h2>Kampanjer</h2></a-divider>
+          <a-divider orientation="left"><h2>Kommande</h2></a-divider>
           <CarouselComp />
-          <br />
-          <CardComp category="laptops" />
-          <br />
-          <CardComp category="smartphones" />
 
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi ad magnam repellendus
-            vero saepe. Tenetur esse nobis dolore quisquam odio.
-          </p>
+          <br />
+          <br />
+
+          <a-space direction="vertical">
+            <a-typography-title :level="2">Om våra produkter</a-typography-title>
+            <a-typography-text
+              >Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat unde quae possimus
+              nulla expedita vel porro quam libero labore obcaecati dolores fuga sapiente
+              voluptatibus cum ipsam neque asperiores dolorum magnam nam, debitis reprehenderit.
+              Adipisci, suscipit quam mollitia beatae expedita voluptates maiores fugiat consequatur
+              minus debitis fuga molestiae, accusamus illum architecto!</a-typography-text
+            >
+          </a-space>
+
+          <br />
+          <br />
+          <br />
+
+          <!-- visa olika komponenter beroende på vilken <a-menu-item> som väljs med hjälp av en växel  -->
+          <template v-if="selectedKeys2[0] === '1'">
+            <CardComp category="laptops" />
+          </template>
+          <template v-else-if="selectedKeys2[0] === '2'">
+            <CardComp category="smartphones" />
+          </template>
         </a-layout-content>
       </a-layout>
     </a-layout>
@@ -68,7 +85,12 @@ export default defineComponent({
     RightCircleOutlined,
   },
   setup() {
+    const activeCategory = ref("laptops");
     return {
+      activeCategory,
+      handleMenuClick(key) {
+        activeCategory.value = key;
+      },
       selectedKeys1: ref(["2"]),
       selectedKeys2: ref(["1"]),
       collapsed: ref(false),
@@ -79,6 +101,9 @@ export default defineComponent({
 </script>
 
 <style scoped>
+a-space {
+  margin: 1rem;
+}
 .layout-container {
   display: flex;
   justify-content: center;

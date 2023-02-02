@@ -2,7 +2,6 @@
   <app-header />
   <router-view />
   <app-footer />
-  <span><router-link to="/">Home</router-link> | <router-link to="/about">About</router-link></span>
 </template>
 
 <script>

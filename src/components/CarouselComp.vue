@@ -20,6 +20,34 @@
   </a-carousel>
 </template>
 
+<script>
+import api from "./api";
+import { LeftCircleOutlined, RightCircleOutlined } from "@ant-design/icons-vue";
+import { defineComponent } from "vue";
+
+export default defineComponent({
+  components: {
+    LeftCircleOutlined,
+    RightCircleOutlined,
+  },
+  data() {
+    return {
+      products: [],
+      randomProducts: [],
+    };
+  },
+  mounted() {
+    this.getRandomProducts();
+  },
+  methods: {
+    async getRandomProducts() {
+      this.products = await api.getProducts();
+      this.randomProducts = this.products.sort(() => Math.random() - 0.5).slice(0, 3);
+    },
+  },
+});
+</script>
+
 <style>
 .flex-container {
   display: flex;
@@ -55,31 +83,3 @@ img {
   object-fit: cover;
 }
 </style>
-
-<script>
-import api from "./api";
-import { LeftCircleOutlined, RightCircleOutlined } from "@ant-design/icons-vue";
-import { defineComponent } from "vue";
-
-export default defineComponent({
-  components: {
-    LeftCircleOutlined,
-    RightCircleOutlined,
-  },
-  data() {
-    return {
-      products: [],
-      randomProducts: [],
-    };
-  },
-  mounted() {
-    this.getRandomProducts();
-  },
-  methods: {
-    async getRandomProducts() {
-      this.products = await api.getProducts();
-      this.randomProducts = this.products.sort(() => Math.random() - 0.5).slice(0, 3);
-    },
-  },
-});
-</script>
